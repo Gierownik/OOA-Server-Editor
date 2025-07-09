@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|c:\\users\\krzys\\source\\repos\\server gui concept\\server gui concept\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|solutionrelative:server gui concept\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|c:\\users\\krzys\\source\\repos\\server gui concept\\server gui concept\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|solutionrelative:server gui concept\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|c:\\users\\krzys\\source\\repos\\server gui concept\\server gui concept\\selectionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|solutionrelative:server gui concept\\selectionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|c:\\users\\krzys\\source\\repos\\server gui concept\\server gui concept\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|solutionrelative:server gui concept\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|c:\\users\\krzys\\source\\repos\\server gui concept\\server gui concept\\selectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|solutionrelative:server gui concept\\selectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|c:\\users\\krzys\\source\\repos\\server gui concept\\server gui concept\\steamideditorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A466159-E046-49E0-8735-535963D9AD85}|Server GUI concept\\Server GUI concept.csproj|solutionrelative:server gui concept\\steamideditorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Server GUI concept\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Form1.Designer.cs",
+              "RelativeToolTip": "Server GUI concept\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T14:27:10.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SelectionForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\SelectionForm.Designer.cs",
+              "RelativeDocumentMoniker": "Server GUI concept\\SelectionForm.Designer.cs",
+              "ToolTip": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\SelectionForm.Designer.cs",
+              "RelativeToolTip": "Server GUI concept\\SelectionForm.Designer.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T14:15:17.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SelectionForm.cs",
+              "DocumentMoniker": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\SelectionForm.cs",
+              "RelativeDocumentMoniker": "Server GUI concept\\SelectionForm.cs",
+              "ToolTip": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\SelectionForm.cs",
+              "RelativeToolTip": "Server GUI concept\\SelectionForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T14:02:59.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SteamIDEditorForm.cs",
+              "DocumentMoniker": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\SteamIDEditorForm.cs",
+              "RelativeDocumentMoniker": "Server GUI concept\\SteamIDEditorForm.cs",
+              "ToolTip": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\SteamIDEditorForm.cs",
+              "RelativeToolTip": "Server GUI concept\\SteamIDEditorForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T03:15:50.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Form1.cs",
+              "RelativeDocumentMoniker": "Server GUI concept\\Form1.cs",
+              "ToolTip": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Form1.cs",
+              "RelativeToolTip": "Server GUI concept\\Form1.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAmwHkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T20:27:36.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Form1.cs",
+              "RelativeDocumentMoniker": "Server GUI concept\\Form1.cs",
+              "ToolTip": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Form1.cs [Projekt]",
+              "RelativeToolTip": "Server GUI concept\\Form1.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T19:48:21.102Z",
+              "EditorCaption": " [Projekt]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

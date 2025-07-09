@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "abJEWsdpgns=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\krzys\\source\\repos\\Server GUI concept\\Server GUI concept\\Server GUI concept.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\krzys\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
