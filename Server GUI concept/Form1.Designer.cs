@@ -563,9 +563,9 @@
             RandomMaps.AutoSize = true;
             RandomMaps.Location = new Point(498, 173);
             RandomMaps.Name = "RandomMaps";
-            RandomMaps.Size = new Size(122, 19);
+            RandomMaps.Size = new Size(184, 19);
             RandomMaps.TabIndex = 38;
-            RandomMaps.Text = "Randomise Maps?";
+            RandomMaps.Text = "Randomise Maps and Modes?";
             RandomMaps.UseVisualStyleBackColor = true;
             // 
             // label15
@@ -640,6 +640,7 @@
             // 
             // GravitySlider
             // 
+            GravitySlider.Enabled = false;
             GravitySlider.Location = new Point(465, 233);
             GravitySlider.Minimum = 5;
             GravitySlider.Name = "GravitySlider";
@@ -653,9 +654,9 @@
             label20.Font = new Font("Segoe UI", 12F);
             label20.Location = new Point(450, 209);
             label20.Name = "label20";
-            label20.Size = new Size(63, 21);
+            label20.Size = new Size(66, 21);
             label20.TabIndex = 48;
-            label20.Text = "Gravity:";
+            label20.Text = "Unused:";
             // 
             // DamageDisplay
             // 
@@ -675,6 +676,7 @@
             // 
             // GravityDisplay
             // 
+            GravityDisplay.Enabled = false;
             GravityDisplay.Location = new Point(537, 211);
             GravityDisplay.Name = "GravityDisplay";
             GravityDisplay.Size = new Size(32, 23);
