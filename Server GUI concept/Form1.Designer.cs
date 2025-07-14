@@ -127,7 +127,7 @@
             textBox8 = new TextBox();
             button29 = new Button();
             label23 = new Label();
-            Validate = new Button();
+            Validate_Button = new Button();
             SaveButton = new Button();
             Run = new Button();
             OpenButton = new Button();
@@ -1065,14 +1065,15 @@
             label23.TabIndex = 94;
             label23.Text = "Name:";
             // 
-            // Validate
+            // Validate_Button
             // 
-            Validate.Location = new Point(12, 27);
-            Validate.Name = "Validate";
-            Validate.Size = new Size(75, 23);
-            Validate.TabIndex = 95;
-            Validate.Text = "Validate";
-            Validate.UseVisualStyleBackColor = true;
+            Validate_Button.Location = new Point(12, 27);
+            Validate_Button.Name = "Validate_Button";
+            Validate_Button.Size = new Size(75, 23);
+            Validate_Button.TabIndex = 95;
+            Validate_Button.Text = "Validate";
+            Validate_Button.UseVisualStyleBackColor = true;
+            Validate_Button.Click += Validate_Button_Click;
             // 
             // SaveButton
             // 
@@ -1111,7 +1112,7 @@
             Controls.Add(OpenButton);
             Controls.Add(Run);
             Controls.Add(SaveButton);
-            Controls.Add(Validate);
+            Controls.Add(Validate_Button);
             Controls.Add(label23);
             Controls.Add(button29);
             Controls.Add(textBox8);
@@ -1315,7 +1316,7 @@
         private TextBox textBox8;
         private Button button29;
         private Label label23;
-        private Button Validate;
+        private Button Validate_Button;
         private Button SaveButton;
         private Button Run;
         private Button OpenButton;

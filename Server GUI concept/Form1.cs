@@ -8,6 +8,7 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using static Server_GUI_concept.SelectionForm;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Text.RegularExpressions;
 
 namespace Server_GUI_concept
 {
@@ -528,6 +529,36 @@ namespace Server_GUI_concept
 
 
         //here ----------------------------------------------------------------------------------------------
+
+        private void Validate_Button_Click(object sender, EventArgs e)
+        {
+            string sername = Name_Text.Text;
+            string password = Password_Text.Text;
+            string load1nam = Name_Textbox.Text;
+            int lodnum = currentLoadout;
+         
+            Regex alphanumeric = new Regex("^[a-zA-Z0-9]+$");
+
+            if (!alphanumeric.IsMatch(sername))
+            {
+                MessageBox.Show("Server Name contains invalid characters, or is empty. Only a-z, A-Z, and 0-9 are allowed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!alphanumeric.IsMatch(password) && !string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Password contains invalid characters. Only a-z, A-Z, and 0-9 are allowed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!alphanumeric.IsMatch(load1nam) && !string.IsNullOrEmpty(load1nam))
+            {
+                MessageBox.Show($"Loadout {lodnum + 1} Name contains invalid characters. Only a-z, A-Z, and 0-9 are allowed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show("Everything seems correct!", "Validation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
