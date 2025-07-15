@@ -534,8 +534,7 @@ namespace Server_GUI_concept
         {
             string sername = Name_Text.Text;
             string password = Password_Text.Text;
-            string load1nam = Name_Textbox.Text;
-            int lodnum = currentLoadout;
+            string curloadnam = Name_Textbox.Text;
          
             Regex alphanumeric = new Regex("^[a-zA-Z0-9]+$");
 
@@ -550,11 +549,19 @@ namespace Server_GUI_concept
                 MessageBox.Show("Password contains invalid characters. Only a-z, A-Z, and 0-9 are allowed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!alphanumeric.IsMatch(load1nam) && !string.IsNullOrEmpty(load1nam))
+            for (int i = 0; i < loadouts.Length; i++)
             {
-                MessageBox.Show($"Loadout {lodnum + 1} Name contains invalid characters. Only a-z, A-Z, and 0-9 are allowed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                var loadout = loadouts[i];
+                if (loadout != null && !string.IsNullOrEmpty(loadout.Name))
+                {
+                    if (!alphanumeric.IsMatch(loadout.Name) || !alphanumeric.IsMatch(curloadnam))
+                    {
+                        MessageBox.Show($"Loadout {i + 1} Name contains invalid characters. Only a-z, A-Z, and 0-9 are allowed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
             }
+
 
             MessageBox.Show("Everything seems correct!", "Validation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

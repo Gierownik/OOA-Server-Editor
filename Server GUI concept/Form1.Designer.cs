@@ -131,6 +131,7 @@
             SaveButton = new Button();
             Run = new Button();
             OpenButton = new Button();
+            label39 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Players_Min).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Players_Max).BeginInit();
@@ -1104,11 +1105,23 @@
             OpenButton.UseVisualStyleBackColor = true;
             OpenButton.Click += OpenButton_Click;
             // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            label39.ForeColor = SystemColors.ControlDark;
+            label39.Location = new Point(124, 327);
+            label39.Name = "label39";
+            label39.Size = new Size(132, 15);
+            label39.TabIndex = 99;
+            label39.Text = "Switch loadouts  to save";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(716, 568);
+            Controls.Add(label39);
             Controls.Add(OpenButton);
             Controls.Add(Run);
             Controls.Add(SaveButton);
@@ -1322,5 +1335,6 @@
         private Button OpenButton;
         private ToolStripMenuItem outofstatsToolStripMenuItem;
         private ToolStripMenuItem blackoutListToolStripMenuItem;
+        private Label label39;
     }
 }
