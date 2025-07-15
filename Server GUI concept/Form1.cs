@@ -56,8 +56,14 @@ namespace Server_GUI_concept
             }
 
             return $"[{id}]";
-        }
+        } // ---------------------------------------------------------------------------------------------------------------------------- Weapon ids-------------
+        public static HashSet<int> PrimaryWeaponIDs = new() {0, 7, 6, 9, 8, 10, 11, 12, 13, 14, 18 };
+        public static HashSet<int> SecondaryWeaponIDs = new() {0, 2, 3, 5, 4, 19, 21};
+        public static HashSet<int> BackupWeaponIDs = new() {0, 1, 17, 22, 23, 15, 16, 20};
 
+        public static HashSet<int> DefaultVisibleAmmo = new() {0, 68, 67, 74, 66, 80};
+        public static HashSet<int> DefaultVisibleDevices = new() {0, 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17};
+        //------------------------------------------------------------------------------------------------------------------- important shit ^ here--------------
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
@@ -250,6 +256,9 @@ namespace Server_GUI_concept
             currentLoadout = index;
             LoadLoadout(currentLoadout);
             UpdateLoadoutButtons();
+            SelectionForm.Restrictions.Reset();
+            ApplyAugmentEffects(currentLoadout);
+
         }
 
         private void SaveCurrentLoadout(int index)
@@ -345,6 +354,136 @@ namespace Server_GUI_concept
         private void Loadout4_Button_Click(object sender, EventArgs e) => SwitchLoadout(3);
         private void Loadout5_Button_Click(object sender, EventArgs e) => SwitchLoadout(4);
 
+        //---------------------------------------------------------------------------------------- Passive validation logic
+
+        private void EnableModSlots(string slot, int count)
+        {
+            if (slot == "Primary")
+            {
+                PrimaryMod3_Button.Enabled = count > 2;
+                PrimaryMod4_Button.Enabled = count > 3;
+            }
+            else if (slot == "Secondary")
+            {
+                SecondaryMod3_Button.Enabled = count > 2;
+                SecondaryMod4_Button.Enabled = count > 3;
+            }
+        }
+
+        private void ApplyAugmentEffects(int loadoutIndex)
+        {
+            var loadout = loadouts[loadoutIndex];
+
+            // Resolve augment IDs
+            var augIDs = loadout.Augs
+            .Where(name => !string.IsNullOrEmpty(name))
+            .Select(name =>
+            {
+                var augDict = IDDatabase.GetItems("Augments");
+                return augDict != null && augDict.TryGetValue(name, out var id) ? id : -1;
+            })
+            .Where(id => id != -1)
+            .ToHashSet();
+
+            bool hasSpecialist = augIDs.Contains(18);
+            bool hasHeavyWeapons = augIDs.Contains(19);
+            bool hasVersatile = augIDs.Contains(61);
+            bool hasTechnician = augIDs.Contains(23);
+            bool hasExperimental = augIDs.Contains(17);
+            bool hasSurplus = augIDs.Contains(25);
+            bool hasProfessional = augIDs.Contains(50);
+
+            
+            if (hasSpecialist)
+            {
+                loadout.Devices[1] = "";
+                Device2_Button.Text = "";
+                Device2_Button.Enabled = false;
+            }
+            else
+            {
+                Device2_Button.Enabled = true;
+            }
+
+
+            if (hasHeavyWeapons)
+            {
+                SelectionForm.Restrictions.ShowHeavyWeapons = true;
+                SelectionForm.Restrictions.LockBackupToHeavy = true;
+                SelectionForm.Restrictions.HeavyBackupIDs = new HashSet<int> { 16, 15, 20 };
+            }
+            else
+            {
+                SelectionForm.Restrictions.ShowHeavyWeapons = false;
+                SelectionForm.Restrictions.LockBackupToHeavy = false;
+                SelectionForm.Restrictions.HeavyBackupIDs.Clear();
+            }
+
+
+           
+            SelectionForm.SetVersatileMode(hasVersatile);
+
+            
+            if (hasTechnician)
+            {
+                SelectionForm.EnableHiddenAmmo(new[] { 72, 61, 70, 69, 84, 96 }); 
+            }
+
+            
+            if (hasExperimental)
+            {
+                SelectionForm.EnableHiddenDevices(new[] { 1, 8, 9, 10, 16 }); 
+            }
+
+            // Mod slot enabling
+            int modSlots = 2;
+            if (hasSpecialist || hasSurplus) modSlots = hasSpecialist && hasSurplus ? 4 : 3;
+            EnableModSlots("Primary", modSlots);
+            EnableModSlots("Secondary", modSlots);
+
+            
+            if (hasProfessional)
+            {
+                SelectionForm.SetPrimaryHidden(true);
+                loadout.Primary = "";
+                Primary_Button.Text = "";
+            }
+            else
+            {
+                SelectionForm.SetPrimaryHidden(false);
+            }
+
+           
+            int backupID = -1;
+            int primaryID = (!string.IsNullOrEmpty(loadout.Primary) &&
+                 IDDatabase.GetItems("Weapons").TryGetValue(loadout.Primary, out var pid))
+                ? pid
+                : -1;
+
+            var weapons = IDDatabase.GetItems("Weapons");
+
+            if (weapons != null && loadout?.Backup != null && weapons.TryGetValue(loadout.Backup, out var bid))
+            {
+                backupID = bid;
+            }
+
+            if (new[] { 16, 15, 20 }.Contains(backupID))
+                Backup_Label.Text = "Heavy:";
+            else
+                Backup_Label.Text = "Backup:";
+
+            
+            if (primaryID == 12) // Warrant
+            {
+                SelectionForm.SetAmmoOverride(allowedIDs: new[] { 86, 87, 88, 89 }); 
+            }
+            else
+            {
+                SelectionForm.ClearAmmoOverride();
+            }
+        }
+
+
 
         //here----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void Device1_Button_Click(object sender, EventArgs e)
@@ -369,6 +508,8 @@ namespace Server_GUI_concept
             {
                 loadouts[currentLoadout].Augs[0] = selected;
                 Aug1_Button.Text = selected;
+                SelectionForm.Restrictions.Reset();
+                ApplyAugmentEffects(currentLoadout);
             }).ShowDialog();
         }
         private void Aug2_Button_Click(object sender, EventArgs e)
@@ -377,6 +518,8 @@ namespace Server_GUI_concept
             {
                 loadouts[currentLoadout].Augs[1] = selected;
                 Aug2_Button.Text = selected;
+                SelectionForm.Restrictions.Reset();
+                ApplyAugmentEffects(currentLoadout);
             }).ShowDialog();
         }
         private void Aug3_Button_Click(object sender, EventArgs e)
@@ -385,6 +528,8 @@ namespace Server_GUI_concept
             {
                 loadouts[currentLoadout].Augs[2] = selected;
                 Aug3_Button.Text = selected;
+                SelectionForm.Restrictions.Reset();
+                ApplyAugmentEffects(currentLoadout);
             }).ShowDialog();
         }
         private void Aug4_Button_Click(object sender, EventArgs e)
@@ -393,31 +538,36 @@ namespace Server_GUI_concept
             {
                 loadouts[currentLoadout].Augs[3] = selected;
                 Aug4_Button.Text = selected;
+                SelectionForm.Restrictions.Reset();
+                ApplyAugmentEffects(currentLoadout);
             }).ShowDialog();
         }
         private void Backup_Button_Click(object sender, EventArgs e)
         {
-            new SelectionForm("Weapons", selected =>
-            {
+            new SelectionForm("Weapons", selected => {
                 loadouts[currentLoadout].Backup = selected;
                 Backup_Button.Text = selected;
-            }).ShowDialog();
+            }, slot: "Backup").ShowDialog();
+            SelectionForm.Restrictions.Reset();
+            ApplyAugmentEffects(currentLoadout);
         }
         private void Secondary_Button_Click(object sender, EventArgs e)
         {
-            new SelectionForm("Weapons", selected =>
-            {
+            new SelectionForm("Weapons", selected => {
                 loadouts[currentLoadout].Secondary = selected;
                 Secondary_Button.Text = selected;
-            }).ShowDialog();
+            }, slot: "Sidearm").ShowDialog();
+            SelectionForm.Restrictions.Reset();
+            ApplyAugmentEffects(currentLoadout);
         }
         private void Primary_Button_Click(object sender, EventArgs e)
         {
-            new SelectionForm("Weapons", selected =>
-            {
+            new SelectionForm("Weapons", selected => {
                 loadouts[currentLoadout].Primary = selected;
                 Primary_Button.Text = selected;
-            }).ShowDialog();
+            }, slot: "Primary").ShowDialog();
+            SelectionForm.Restrictions.Reset();
+            ApplyAugmentEffects(currentLoadout);
         }
         private void SecondaryOptic_Button_Click(object sender, EventArgs e)
         {

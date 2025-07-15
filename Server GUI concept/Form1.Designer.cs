@@ -95,7 +95,7 @@
             Device1_Button = new Button();
             label22 = new Label();
             Backup_Button = new Button();
-            label24 = new Label();
+            Backup_Label = new Label();
             Name_Textbox = new TextBox();
             SecondaryMod1_Button = new Button();
             label25 = new Label();
@@ -752,15 +752,15 @@
             Backup_Button.UseVisualStyleBackColor = true;
             Backup_Button.Click += Backup_Button_Click;
             // 
-            // label24
+            // Backup_Label
             // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Segoe UI", 12F);
-            label24.Location = new Point(155, 346);
-            label24.Name = "label24";
-            label24.Size = new Size(63, 21);
-            label24.TabIndex = 54;
-            label24.Text = "Backup:";
+            Backup_Label.AutoSize = true;
+            Backup_Label.Font = new Font("Segoe UI", 12F);
+            Backup_Label.Location = new Point(155, 346);
+            Backup_Label.Name = "Backup_Label";
+            Backup_Label.Size = new Size(63, 21);
+            Backup_Label.TabIndex = 54;
+            Backup_Label.Text = "Backup:";
             // 
             // Name_Textbox
             // 
@@ -851,6 +851,7 @@
             // 
             // SecondaryMod4_Button
             // 
+            SecondaryMod4_Button.Enabled = false;
             SecondaryMod4_Button.Location = new Point(399, 537);
             SecondaryMod4_Button.Name = "SecondaryMod4_Button";
             SecondaryMod4_Button.Size = new Size(83, 21);
@@ -871,6 +872,7 @@
             // 
             // SecondaryMod3_Button
             // 
+            SecondaryMod3_Button.Enabled = false;
             SecondaryMod3_Button.Location = new Point(399, 510);
             SecondaryMod3_Button.Name = "SecondaryMod3_Button";
             SecondaryMod3_Button.Size = new Size(83, 21);
@@ -911,6 +913,7 @@
             // 
             // PrimaryMod4_Button
             // 
+            PrimaryMod4_Button.Enabled = false;
             PrimaryMod4_Button.Location = new Point(580, 537);
             PrimaryMod4_Button.Name = "PrimaryMod4_Button";
             PrimaryMod4_Button.Size = new Size(83, 21);
@@ -931,6 +934,7 @@
             // 
             // PrimaryMod3_Button
             // 
+            PrimaryMod3_Button.Enabled = false;
             PrimaryMod3_Button.Location = new Point(580, 510);
             PrimaryMod3_Button.Name = "PrimaryMod3_Button";
             PrimaryMod3_Button.Size = new Size(83, 21);
@@ -1179,7 +1183,7 @@
             Controls.Add(Device1_Button);
             Controls.Add(label22);
             Controls.Add(Backup_Button);
-            Controls.Add(label24);
+            Controls.Add(Backup_Label);
             Controls.Add(CoreDurationDisplay);
             Controls.Add(GravityDisplay);
             Controls.Add(CoreGenDisplay);
@@ -1312,7 +1316,7 @@
         private Button Device1_Button;
         private Label label22;
         private Button Backup_Button;
-        private Label label24;
+        private Label Backup_Label;
         private TextBox Name_Textbox;
         private Button SecondaryMod1_Button;
         private Label label25;
