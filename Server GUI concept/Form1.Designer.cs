@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             Loadout1_Button = new Button();
             Loadout2_Button = new Button();
@@ -132,6 +133,7 @@
             Run = new Button();
             OpenButton = new Button();
             label39 = new Label();
+            toolTip1 = new ToolTip(components);
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Players_Min).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Players_Max).BeginInit();
@@ -254,12 +256,15 @@
             // 
             // Aug3_Button
             // 
+            Aug3_Button.BackColor = Color.FromArgb(255, 192, 192);
+            Aug3_Button.Cursor = Cursors.Help;
             Aug3_Button.Location = new Point(65, 429);
             Aug3_Button.Name = "Aug3_Button";
             Aug3_Button.Size = new Size(83, 21);
             Aug3_Button.TabIndex = 13;
             Aug3_Button.Text = "None";
-            Aug3_Button.UseVisualStyleBackColor = true;
+            toolTip1.SetToolTip(Aug3_Button, "25% reduced vitals and defense restoration\r\n25% reduced effectiveness of damage reductions\r\n25% increased device cooldowns\r\n");
+            Aug3_Button.UseVisualStyleBackColor = false;
             Aug3_Button.Click += Aug3_Button_Click;
             // 
             // label5
@@ -274,12 +279,15 @@
             // 
             // Aug4_Button
             // 
+            Aug4_Button.BackColor = Color.FromArgb(255, 192, 192);
+            Aug4_Button.Cursor = Cursors.Help;
             Aug4_Button.Location = new Point(65, 456);
             Aug4_Button.Name = "Aug4_Button";
             Aug4_Button.Size = new Size(83, 21);
             Aug4_Button.TabIndex = 15;
             Aug4_Button.Text = "None";
-            Aug4_Button.UseVisualStyleBackColor = true;
+            toolTip1.SetToolTip(Aug4_Button, "25% reduced Core duration and generation\r\n25% reduced detection and radar range\r\n25% increased aux power drain from all sources\r\n25% increased augment cooldowns\r\n");
+            Aug4_Button.UseVisualStyleBackColor = false;
             Aug4_Button.Click += Aug4_Button_Click;
             // 
             // label6
@@ -562,6 +570,8 @@
             // RandomMaps
             // 
             RandomMaps.AutoSize = true;
+            RandomMaps.Checked = true;
+            RandomMaps.CheckState = CheckState.Checked;
             RandomMaps.Location = new Point(498, 173);
             RandomMaps.Name = "RandomMaps";
             RandomMaps.Size = new Size(184, 19);
@@ -1116,6 +1126,12 @@
             label39.TabIndex = 99;
             label39.Text = "Switch loadouts  to save";
             // 
+            // toolTip1
+            // 
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 100;
+            toolTip1.ReshowDelay = 100;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1336,5 +1352,6 @@
         private ToolStripMenuItem outofstatsToolStripMenuItem;
         private ToolStripMenuItem blackoutListToolStripMenuItem;
         private Label label39;
+        private ToolTip toolTip1;
     }
 }
