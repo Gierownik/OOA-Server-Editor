@@ -61,7 +61,7 @@ namespace Server_GUI_concept
         public static HashSet<int> SecondaryWeaponIDs = new() {0, 2, 3, 5, 4, 19, 21};
         public static HashSet<int> BackupWeaponIDs = new() {0, 1, 17, 22, 23, 15, 16, 20};
 
-        public static HashSet<int> DefaultVisibleAmmo = new() {0, 68, 67, 74, 66, 80};
+        public static HashSet<int> DefaultVisibleAmmo = new() {0, 26, 21, 20, 19, 35};
         public static HashSet<int> DefaultVisibleDevices = new() {0, 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17};
         //------------------------------------------------------------------------------------------------------------------- important shit ^ here--------------
 
@@ -426,7 +426,7 @@ namespace Server_GUI_concept
             
             if (hasTechnician)
             {
-                SelectionForm.EnableHiddenAmmo(new[] { 72, 61, 70, 69, 84, 96 }); 
+                SelectionForm.EnableHiddenAmmo(new[] { 46, 24, 23, 22, 36, 49 }); 
             }
 
             
@@ -475,7 +475,7 @@ namespace Server_GUI_concept
             
             if (primaryID == 12) // Warrant
             {
-                SelectionForm.SetAmmoOverride(allowedIDs: new[] { 86, 87, 88, 89 }); 
+                SelectionForm.SetAmmoOverride(allowedIDs: new[] { 38, 39, 40, 41 }); 
             }
             else
             {
