@@ -12,3 +12,4 @@
 ```
 
 **Graphical interface for Out of Actions server software**
+<img width="710" height="593" alt="image" src="https://github.com/user-attachments/assets/89c53776-895f-495b-ae44-20d0a32e90ba" />
