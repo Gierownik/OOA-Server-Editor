@@ -11,5 +11,11 @@
                                                    
 ```
 
-**Graphical interface for Out of Actions server software**
-<img width="710" height="593" alt="image" src="https://github.com/user-attachments/assets/89c53776-895f-495b-ae44-20d0a32e90ba" />
+**Graphical interface for Out of Actions server software** <br />
+**Great for:**<br />
+**- Editing your settings before FTPing them to the server**<br />
+**- Self Hosting**<br />
+**- Managing Plugins**<br />
+<img width="710" height="593" alt="image" src="https://github.com/user-attachments/assets/89c53776-895f-495b-ae44-20d0a32e90ba" /><br />
+**Reviews**<br />
+**■ ■ ■ ■ □ - Anonymous "[..] software"**
