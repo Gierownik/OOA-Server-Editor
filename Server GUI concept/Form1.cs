@@ -686,7 +686,7 @@ namespace Server_GUI_concept
             string password = Password_Text.Text;
             string curloadnam = Name_Textbox.Text;
          
-            Regex alphanumeric = new Regex("^[a-zA-Z0-9]+$");
+            Regex alphanumeric = new Regex(@"^[a-zA-Z0-9 \-_/\'\.,]+$"); 
 
             if (!alphanumeric.IsMatch(sername))
             {
